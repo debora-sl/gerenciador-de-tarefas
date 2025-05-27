@@ -1,6 +1,7 @@
 import { useState } from "react";
 import AddTasks from "./components/AddTasks";
 import Tasks from "./components/Tasks";
+import {v4} from 'uuid';
 
 function App() {
   // Criando o State de Tarefas
@@ -46,9 +47,9 @@ function App() {
   }
 
   // Função para adicionar tarefas
-  function onAddTaskSubmit({title, description}){
+  function onAddTaskSubmit(title, description){
     const newTask = {
-      id: tasks.length + 1,
+      id: v4(),
       title,
       description,
       isCompleted: false
